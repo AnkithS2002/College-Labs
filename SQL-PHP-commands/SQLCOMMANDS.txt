@@ -1,0 +1,75 @@
+DDL commands:
+
+CREATE TABLE table_name ( column1 datatype,
+    column2 datatype,  column3 datatype, ....);
+	
+TRUNCATE TABLE table_name;
+
+DROP TABLE table_name;
+
+ALTER TABLE table_name DROP COLUMN column_name;
+ALTER TABLE table_name ADD column_name datatype;
+ALTER TABLE table_name MODIFY COLUMN column_name datatype;
+ALTER TABLE table_name RENAME COLUMN old_name TO new_name; 
+
+
+CREATE TABLE Students
+(
+ROLL_NO int(3),
+NAME varchar(20),
+SUBJECT varchar(20),
+);
+
+TRUNCATE TABLE table_name;
+
+DROP TABLE table_name;
+
+ALTER TABLE table_name ADD column_name datatype;
+ ALTER TABLE Student ADD (AGE number(3),COURSE varchar(40));
+
+ALTER TABLE table_name DROP COLUMN column_name;
+ALTER TABLE Student DROP COLUMN COURSE;
+
+ALTER TABLE table_name MODIFY COLUMN column_name datatype;
+ALTER TABLE Student MODIFY COURSE varchar(20);
+
+
+ALTER TABLE table_name RENAME COLUMN old_name TO new_name; 
+ALTER TABLE Student RENAME COLUMN COURSE TO COURSENEW;
+
+Data Manipulation Language:
+
+INSERT INTO TABLE_NAME  [ (col1, col2, col3,...colN)] 
+VALUES (value1, value2, value3,...valueN); 
+
+UPDATE table_name SET column_name1 = value1, 
+column_name2 = value2, ... [WHERE condition] 
+
+DELETE FROM table_name [WHERE condition];
+
+SELECT column_name(s) FROM table_name WHERE column_1 = value_1 AND column_2 = value_2;
+  
+  
+INSERT INTO employee (id, name, dept, age, salary location) VALUES (105, 'Srinath', 'Aeronautics', 27, 33000);
+
+INSERT INTO employee 
+VALUES (105, 'Srinath', 'Aeronautics', 27, 33000); 
+
+UPDATE table_name SET column_name1 = value1, 
+column_name2 = value2, ... 
+[WHERE condition] 
+
+UPDATE Student SET NAME = 'PRATIK' WHERE Age = 20;
+
+DELETE FROM table_name [WHERE condition];
+
+Examples of 
+DELETE FROM employee WHERE id = 100;
+
+
+SELECT column_name(s)
+FROM table_name
+WHERE column_1 = value_1
+  AND column_2 = value_2;
+  
+COMMIT– commits a Transaction.
