@@ -70,7 +70,7 @@ void printList(struct Node* node)
 	} 
 } 
 
-int main(void) 
+int main() 
 { 
 	struct Node* head = NULL; 
 	int e = 0;
