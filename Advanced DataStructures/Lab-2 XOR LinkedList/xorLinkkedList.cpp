@@ -55,7 +55,7 @@ Node* delete_end(Node *head)
 {
     Node *prev = NULL;
     Node *curr = head;
-    Node *next = XOR(prev, curr->ptr);
+    Node *next = XOR(prev, curr->link);
     if(head == NULL){
         return NULL;
 
@@ -63,10 +63,10 @@ Node* delete_end(Node *head)
     while (next != NULL) {  
         prev = curr;  
         curr = next;  
-        next = XOR(prev, curr->ptr);  
+        next = XOR(prev, curr->link);  
     }
     if(prev != NULL){
-        prev->ptr = XOR(prev->ptr, curr);
+        prev->link = XOR(prev->link, curr);
     }
     delete curr;
     return head;
