@@ -46,8 +46,9 @@ void insertEnd(Node **head_ref, int data) {
 	curr->link = XOR(curr->link, new_node);
 	
 	}else{
+		new_node->link = NULL;	
 		*head_ref = new_node;
-        	*head_ref->link = NULL;
+        	
 	}
 }
 
@@ -119,11 +120,11 @@ int main () {
 
 	printList (head); 
 	
-	Node* head1 = NULL;
-	cout<<"After deleting the last node from the second list ";
+	Node* head1 = head;
+	cout<<"\nAfter deleting the last node from the second list ";
 	head1 = delete_end(head1);
 	printList(head1);
-	cout<<"After deleting the first node from the second list ";
+	cout<<"\nAfter deleting the first node from the second list ";
 	head1 = delete_begin(head1);
 	printList(head1);
 	
