@@ -27,18 +27,30 @@ void insertBeginning(Node **head_ref, int data) {
 } 
 
 void insertEnd(Node **head_ref, int data) {
-    Node *new_node = new Node(); 
+	Node *new_node = new Node(); 
 	new_node->data = data;
-    Node *curr = *head_ref;
-    Node *prev = NULL;
-    Node *next;
-    while(curr != NULL){
-        next = XOR (prev, curr->link); 
-        prev = curr;
-        curr = next;
-    }
-    new_node->link = XOR(curr, NULL);
-    curr->link = XOR(new_node, prev);
+	
+	Node *curr = *head_ref;
+	Node *prev = NULL;
+	Node *next = XOR(prev, curr->link); 
+	
+	if (*head_ref != NULL) 
+	{ 
+		while(next != NULL){
+			prev = curr;
+			curr = next;
+			next = XOR (prev, curr->link); 
+		}
+		
+	new_node->link = XOR(curr, NULL);
+	curr->link = XOR(curr->link, new_node);
+	
+	}else{
+		new_node->link = XOR(curr, NULL);
+		*head_ref = new_node; 
+	}
+	
+	
 }
 
 void printList (Node *head) { 
@@ -65,10 +77,10 @@ int main () {
 	while(true) {
     	cout << "Enter the number and -1 to stop: ";
     	cin >> d;
-    	cout<< "Enter 1 to insert at the beginning and 2 at the end: "
-    	cin >> w;
     	if (d == -1)  
     	    break;
+    	cout<< "Enter 1 to insert at the beginning and 2 at the end: ";
+    	cin >> w;
     	if (w == 1)
     	    insertBeginning(&head, d); 
     	if (w == 2)
