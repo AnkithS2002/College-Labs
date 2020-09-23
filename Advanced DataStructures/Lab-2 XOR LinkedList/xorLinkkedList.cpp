@@ -46,11 +46,41 @@ void insertEnd(Node **head_ref, int data) {
 	curr->link = XOR(curr->link, new_node);
 	
 	}else{
-		new_node->link = XOR(curr, NULL);
-		*head_ref = new_node; 
+		*head_ref = new_node;
+        	*head_ref->link = NULL;
 	}
-	
-	
+}
+
+Node* delete_end(Node *head)
+{
+    Node *prev = NULL;
+    Node *curr = head;
+    Node *next = XOR(prev, curr->ptr);
+    if(head == NULL){
+        return NULL;
+
+    }
+    while (next != NULL) {  
+        prev = curr;  
+        curr = next;  
+        next = XOR(prev, curr->ptr);  
+    }
+    if(prev != NULL){
+        prev->ptr = XOR(prev->ptr, curr);
+    }
+    delete curr;
+    return head;
+}
+
+Node* delete_begin(Node *head)
+{
+    if(head == NULL){
+        return NULL;
+    }
+    Node *temp = XOR(head->link,NULL);
+    temp->link = XOR(head, temp->link);
+    delete head;
+    return temp;
 }
 
 void printList (Node *head) { 
@@ -88,6 +118,15 @@ int main () {
 	}
 
 	printList (head); 
+	
+	Node* head1 = NULL;
+	cout<<"After deleting the last node from the second list ";
+	head1 = delete_end(head1);
+	printList(head1);
+	cout<<"After deleting the first node from the second list ";
+	head1 = delete_begin(head1);
+	printList(head1);
+	
 
 	return 0; 
 } 
