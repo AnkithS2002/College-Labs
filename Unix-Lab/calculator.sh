@@ -10,4 +10,6 @@ mul=`echo $a \* $b|bc`
 echo "Product of $a and $b = $mul"
 div=`echo $a \/ $b|bc`
 echo "Division of $a and $b = $div"
+rem=`echo $a \% $b|bc`
+echo "Remainder after dividing $a and $b = $rem"
 
