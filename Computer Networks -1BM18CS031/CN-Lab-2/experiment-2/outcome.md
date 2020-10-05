@@ -7,7 +7,9 @@
 * PC1 was pinged from PC0 using the command prompt
 * A simple PDU was stimulated by sending ICMP packet from PC0 to PC1
 
+
 --------------------------------------------------------------------------------------------------
+
 
 # Learning Outcomes
 
