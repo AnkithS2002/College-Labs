@@ -41,7 +41,7 @@ while e1 != -1:
 
 target = int(input("Enter the target to search: "))
 maxDepth = int(input("Enter the maximum depth: "))
-src = 0
+src = int(input("Enter the source vertex: "))
 
 if g.IDDFS(src, target, maxDepth) == True:
     print("Target is reachable from source " +
@@ -52,22 +52,27 @@ else:
 
 '''
 Output:
-1.Enter the number of vertices: 4
+1.Enter the number of vertices: 5
 Enter the connecting vertices and -1 to stop
-add edge between: 0 1
 add edge between: 1 2
 add edge between: 1 3
-add edge between: -1 0
-Enter the target to search: 0
-Enter the maximum depth: 1
+add edge between: 2 4
+add edge between: 2 5
+add edge between: -1 -1
+Enter the target to search: 4
+Enter the maximum depth: 3
+Enter the source vertex: 1
 Target is reachable from source within max depth
 
-2.Enter the number of vertices: 3
+2.Enter the number of vertices: 5
 Enter the connecting vertices and -1 to stop
-add edge between: 0 1
 add edge between: 1 2
-add edge between: -1 0
-Enter the target to search: 2
-Enter the maximum depth: 1
+add edge between: 2 3
+add edge between: 3 4
+add edge between: 2 5
+add edge between: -1 -1
+Enter the target to search: 5
+Enter the maximum depth: 2
+Enter the source vertex: 1
 Target is NOT reachable from source within max depth
 '''
