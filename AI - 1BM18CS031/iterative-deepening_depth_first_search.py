@@ -10,8 +10,11 @@ class Graph:
         self.graph[u].append(v)
 
     def DLS(self, src, target, maxDepth):
+
         if src == target: return True
+
         if maxDepth <= 0: return False
+
         for i in self.graph[src]:
             if (self.DLS(i, target, maxDepth - 1)):
                 return True
@@ -30,6 +33,8 @@ e1 = 1
 print("Enter the connecting vertices and -1 to stop")
 while e1 != -1:
     e1 = int(input("add edge between: "))
+    if e1 == -1:
+        break
     e2 = int(input("and: "))
     g.addEdge(e1, e2)
 
