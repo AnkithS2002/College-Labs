@@ -32,10 +32,11 @@ g = Graph(n);
 e1 = 1
 print("Enter the connecting vertices and -1 to stop")
 while e1 != -1:
-    e1 = int(input("add edge between: "))
+    e1, e2 = input("add edge between: ").split()
+    e1 = int(e1)
+    e2 = int(e2)
     if e1 == -1:
         break
-    e2 = int(input("and: "))
     g.addEdge(e1, e2)
 
 target = int(input("Enter the target to search: "))
@@ -48,3 +49,25 @@ if g.IDDFS(src, target, maxDepth) == True:
 else:
     print("Target is NOT reachable from source " +
           "within max depth")
+
+'''
+Output:
+1.Enter the number of vertices: 4
+Enter the connecting vertices and -1 to stop
+add edge between: 0 1
+add edge between: 1 2
+add edge between: 1 3
+add edge between: -1 0
+Enter the target to search: 0
+Enter the maximum depth: 1
+Target is reachable from source within max depth
+
+2.Enter the number of vertices: 3
+Enter the connecting vertices and -1 to stop
+add edge between: 0 1
+add edge between: 1 2
+add edge between: -1 0
+Enter the target to search: 2
+Enter the maximum depth: 1
+Target is NOT reachable from source within max depth
+'''
