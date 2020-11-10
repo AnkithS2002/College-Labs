@@ -1,0 +1,30 @@
+Enter number of rows: 5
+
+Enter number of cols: 5
+Enter the co-ordinates of destination
+4
+2
+
+Enter the maze structure: (0 for blocked,1 for free): 
+1 0 1 1 1
+0 1 1 1 1
+1 1 1 1 0
+1 1 0 0 1
+1 0 1 1 1
+
+
+The Maze is:
+1 0 1 1 1 
+0 1 1 1 1 
+1 1 1 1 0 
+1 1 0 0 1 
+1 0 1 1 1 
+
+The Path is:
+- 0 1 1 1 
+0 - 1 1 1 
+1 1 - - 0 
+1 1 0 0 - 
+1 0 - - - 
+
+[[0, 0], [1, 1], [2, 2], [2, 3], [3, 4], [4, 4], [4, 3], [4, 2]]
